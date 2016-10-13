@@ -1,23 +1,17 @@
-#ifndef LLIST_H_
-#define LLIST_H_
+#ifndef LIST_H_
+#define LIST_H_
 
 #include <stdint.h>
 
 typedef intptr_t val_t;
 
-typedef struct node {
+typedef struct __LIST_T {
     val_t data;
     struct node *next;
-} node_t;
+} list_t;
 
-typedef struct llist {
-    node_t *head;
-    uint32_t size;
-} llist_t;
-
-llist_t *list_new();
-int list_add(llist_t *the_list, val_t val);
-void list_print(llist_t *the_list);
-node_t *list_nth(llist_t *the_list, uint32_t index);
-
+list_t *list_mid(list_t *list);
+int list_add(list_t *list, val_t val);
+void list_print(list_t *list);
+int list_size(list_t *list)
 #endif
